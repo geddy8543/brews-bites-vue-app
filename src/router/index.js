@@ -5,6 +5,8 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import RecipesIndex from "../views/RecipesIndex.vue";
+import RecipesNew from "../views/RecipesNew.vue";
+import RecipesEdit from "../views/RecipesEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +28,8 @@ const routes = [
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
   { path: "/recipes", name: "RecipesIndex", component: RecipesIndex },
+  { path: "/recipes/new", name: "RecipesNew", component: RecipesNew },
+  { path: "/recipes/:id/edit", name: "RecipesEdit", component: RecipesEdit },
 ];
 
 const router = new VueRouter({
