@@ -59,6 +59,11 @@ export default {
         console.log("All recipes", this.recipes);
       });
     },
+    showRecipe: function (recipe) {
+      console.log(recipe);
+      this.currentRecipe = recipe;
+      document.querySelector("#recipe-details").showModal();
+    },
     relativeDate: function (date) {
       return moment(date).fromNow();
     },
