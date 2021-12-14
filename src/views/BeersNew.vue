@@ -2,25 +2,29 @@
   <div class="recipes-new">
     <img v-if="status" :src="`https://http.cat/${status}`" alt="" />
     <form v-on:submit.prevent="createRecipe()">
-      <h1>New Recipe!</h1>
+      <h1>New Beer!</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Title:</label>
-        <input type="text" v-model="newRecipeParams.title" />
+        <label>Name:</label>
+        <input type="text" v-model="newBeerParams.name" />
       </div>
       <div>
-        <label>Description:</label>
-        <input type="text" v-model="newRecipeParams.description" />
+        <label>Style:</label>
+        <input type="text" v-model="newBeerParams.style" />
+      </div>
+      <div>
+        <label>Prep Time:</label>
+        <input type="text" v-model="newRecipeParams.prep_time" />
       </div>
       <div>
         <label>Ingredients:</label>
         <input type="text" v-model="newRecipeParams.ingredients" />
       </div>
       <div>
-        <label>Instructions:</label>
-        <input type="text" v-model="newRecipeParams.instructions" />
+        <label>Directions:</label>
+        <input type="text" v-model="newRecipeParams.directions" />
       </div>
       <div>
         <label>Image Url:</label>
@@ -43,7 +47,7 @@ export default {
   },
   methods: {
     createRecipe: function () {
-      console.log("Making a new recipe!");
+      console.log("Makin a new recipe!");
       axios
         .post("/recipes", this.newRecipeParams)
         .then(() => {

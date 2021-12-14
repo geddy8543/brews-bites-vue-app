@@ -1,8 +1,10 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <button v-on:click="login(currentUser)">Login</button>
-    <button v-on:click="signup(currentUser)">Signup</button>
+
+    <router-link to="/signup">Signup</router-link>
+    |
+    <router-link to="/login">Login</router-link>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome To Brews + Bites!!",
+      message: "Brews + Bites",
     };
   },
   methods: {
