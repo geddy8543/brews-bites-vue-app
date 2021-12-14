@@ -9,6 +9,7 @@ import RecipesShow from "../views/RecipesShow.vue";
 import RecipesNew from "../views/RecipesNew.vue";
 import RecipesEdit from "../views/RecipesEdit.vue";
 import BeersIndex from "../views/BeersIndex.vue";
+import BeersShow from "../views/BeersShow.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,7 @@ const routes = [
   { path: "/recipes/new", name: "RecipesNew", component: RecipesNew },
   { path: "/recipes/:id/edit", name: "RecipesEdit", component: RecipesEdit },
   { path: "/beers", name: "BeersIndex", component: BeersIndex },
+  { path: "/beers", name: "BeersShow", component: BeersShow },
 ];
 
 const router = new VueRouter({

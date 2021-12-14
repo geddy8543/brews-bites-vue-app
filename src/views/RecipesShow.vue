@@ -5,7 +5,6 @@
     <p>Description: {{ recipe.description }}</p>
     <p>Ingredients: {{ recipe.ingredients }}</p>
     <p>Instructions: {{ recipe.instructions }}</p>
-    <p>image_url: {{ recipe.image_url }}</p>
     <div v-if="$parent.getUserId() == recipe.user_id">
       <router-link v-bind:to="`/recipes/${recipe.id}/edit`">Edit this recipe</router-link>
     </div>
