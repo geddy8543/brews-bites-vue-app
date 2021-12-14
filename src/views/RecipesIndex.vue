@@ -1,13 +1,24 @@
 <template>
   <div>
     <h1>{{ message }}</h1>
-    <div>
-      Search by title:
-      <input type="text" v-model="titleFilter" list="titles" />
-      <datalist id="titles">
-        <option v-for="recipe in recipes" :key="recipe.id">{{ recipe.title }}</option>
-      </datalist>
+    <h2>All recipes:</h2>
+    <div v-for="recipe in recipes" :key="recipe.id">
+      <h3>{{ recipe.title }}</h3>
+      <img :src="recipe.image_url" :alt="recipe.title" />
+      <p>Description: {{ recipe.description }}</p>
+      <button v-on:click="showRecipe(recipe)">More Info</button>
     </div>
+    <dialog id="recipe-details">
+      <form method="dialog">
+        <h1>Recipe Info:</h1>
+      </form>
+    </dialog>
+
+    Search by title:
+    <input type="text" v-model="titleFilter" list="titles" />
+    <datalist id="titles">
+      <option v-for="recipe in recipes" :key="recipe.id">{{ recipe.title }}</option>
+    </datalist>
 
     <div>
       <button v-on:click="setSortAttribute('title')">Sort by Title</button>
