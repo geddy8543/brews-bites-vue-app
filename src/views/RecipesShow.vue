@@ -5,12 +5,8 @@
     <p>Description: {{ recipe.description }}</p>
     <p>Ingredients: {{ recipe.ingredients }}</p>
     <p>Instructions: {{ recipe.instructions }}</p>
-    <div v-if="$parent.getUserId() == recipe.user_id">
-      <router-link v-bind:to="`/recipes/${recipe.id}/edit`">Edit this recipe</router-link>
-    </div>
-
     |
-    <router-link to="/">Back to all recipes</router-link>
+    <router-link to="/recipes">Back to all recipes</router-link>
   </div>
 </template>
 

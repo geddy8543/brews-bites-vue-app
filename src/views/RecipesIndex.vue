@@ -6,13 +6,8 @@
       <h3>{{ recipe.title }}</h3>
       <img :src="recipe.image_url" :alt="recipe.title" />
       <p>Description: {{ recipe.description }}</p>
-      <button v-on:click="showRecipe(recipe)">More Info</button>
+      <a :href="'/recipes/' + recipe.id">More Info</a>
     </div>
-    <dialog id="recipe-details">
-      <form method="dialog">
-        <h1>Recipe Info:</h1>
-      </form>
-    </dialog>
 
     Search by title:
     <input type="text" v-model="titleFilter" list="titles" />
@@ -22,25 +17,6 @@
 
     <div>
       <button v-on:click="setSortAttribute('title')">Sort by Title</button>
-    </div>
-    <div
-      v-for="recipe in orderBy(filterBy(recipes, titleFilter, 'title'), sortAttribute)"
-      v-on:click="currentRecipe = recipe"
-      v-bind:class="{ selected: recipe === currentRecipe }"
-      :key="recipe.id"
-    >
-      <div class="card" style="width: 18rem">
-        <img :src="recipe.image_url" class="card-img-top" alt="oops" />
-        <div class="card-body">
-          <h5 class="card-title">{{ recipe.title }}</h5>
-          <p class="card-description">Description: {{ recipe.description }}</p>
-          <p class="card-text">Added: {{ relativeDate(recipe.created_at) }}</p>
-          <p class="card-text">Updated: {{ relativeDate(recipe.updated_at) }}</p>
-          <router-link :to="`/recipes/${recipe.id}`">
-            <a class="btn btn-primary">More info</a>
-          </router-link>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -70,11 +46,7 @@ export default {
         console.log("All recipes", this.recipes);
       });
     },
-    showRecipe: function (recipe) {
-      console.log(recipe);
-      this.currentRecipe = recipe;
-      document.querySelector("#recipe-details").showModal();
-    },
+
     relativeDate: function (date) {
       return moment(date).fromNow();
     },

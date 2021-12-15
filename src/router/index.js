@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Welcome from "../views/Welcome.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
@@ -35,7 +36,8 @@ const routes = [
   { path: "/recipes/new", name: "RecipesNew", component: RecipesNew },
   { path: "/recipes/:id/edit", name: "RecipesEdit", component: RecipesEdit },
   { path: "/beers", name: "BeersIndex", component: BeersIndex },
-  { path: "/beers", name: "BeersShow", component: BeersShow },
+  { path: "/beers/:id", name: "BeersShow", component: BeersShow },
+  { path: "/welcome", name: "welcome", component: Welcome },
 ];
 
 const router = new VueRouter({
