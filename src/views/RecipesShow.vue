@@ -5,6 +5,7 @@
     <p>Description: {{ recipe.description }}</p>
     <p>Ingredients: {{ recipe.ingredients }}</p>
     <p>Instructions: {{ recipe.instructions }}</p>
+    <p>Beer Pairing: {{ recipe.beers[0].name }}</p>
     |
     <router-link to="/recipes">Back to all recipes</router-link>
   </div>
@@ -16,6 +17,8 @@ export default {
   data: function () {
     return {
       recipe: {},
+      title: [],
+      beers: [],
     };
   },
   created: function () {
