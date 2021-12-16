@@ -4,7 +4,9 @@
     <img :src="beer.image_url" :alt="beer.name" />
     <p>Style: {{ beer.style }}</p>
     <p>Description: {{ beer.description }}</p>
-    <p>Recipe Pairing: {{ beer.recipes[0].title }}</p>
+    <router-link v-bind:to="`/recipes/${beer.recipes[0].id}`">
+      <p>Recipe Pairing: {{ beer.recipes[0].title }}</p>
+    </router-link>
 
     <router-link to="/beers">Back to all beers</router-link>
   </div>
