@@ -1,5 +1,10 @@
 <template>
   <div class="signup">
+    <br />
+    <br />
+    <br />
+    <br />
+
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
@@ -11,10 +16,12 @@
         <small>{{ 20 - newUserParams.name.length }} characters remaining</small>
       </div>
       <div>
+        <br />
         <label>Email:</label>
         <input type="email" v-model="newUserParams.email" />
       </div>
       <div>
+        <br />
         <label>Password:</label>
         <input type="password" v-model="newUserParams.password" />
         <small v-if="newUserParams.password.length > 0 && newUserParams.password.length < 6" class="text-danger">
@@ -25,6 +32,7 @@
         </small>
       </div>
       <div>
+        <br />
         <label>Password confirmation:</label>
         <input type="password" v-model="newUserParams.password_confirmation" />
         <small v-if="newUserParams.password !== newUserParams.password_confirmation" class="text-danger">
