@@ -5,8 +5,7 @@
       <section id="Login" class="login">
         <div class="container">
           <div class="section-title">
-            <h2></h2>
-            <p>Login</p>
+            <h1>Login</h1>
             <ul>
               <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
             </ul>
@@ -20,45 +19,31 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="row">
-              <div class="col-lg-4 col-md-6 form-group">
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  id="name"
-                  placeholder="Your Name"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars"
-                />
-                <div class="validate"></div>
-              </div>
-              <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input
-                  type="email"
-                  v-model="newSessionParams.email"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  placeholder="Your Email"
-                  data-rule="email"
-                  data-msg="Please enter a valid email"
-                />
-                <div class="validate"></div>
-              </div>
-              <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input
-                  type="password"
-                  v-model="newSessionParams.password"
-                  class="form-control"
-                  name="password"
-                  id="password"
-                  placeholder="Your Password"
-                  data-rule="password"
-                  data-msg="Please enter a valid password"
-                />
-                <input type="submit" value="Submit" />
-              </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input
+                type="email"
+                v-model="newSessionParams.email"
+                class="form-control"
+                name="email"
+                id="email"
+                placeholder="Your Email"
+                data-rule="email"
+                data-msg="Please enter a valid email"
+              />
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input
+                type="password"
+                v-model="newSessionParams.password"
+                class="form-control"
+                name="password"
+                id="password"
+                placeholder="Your Password"
+                data-rule="password"
+                data-msg="Please enter a valid password"
+              />
+              <input type="submit" value="Submit" class="mt-3 opaque-button" />
             </div>
           </form>
 

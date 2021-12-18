@@ -1,15 +1,19 @@
 <template>
-  <div class="beers-show">
-    <h1>{{ beer.name }}</h1>
-    <img :src="beer.image_url" :alt="beer.name" />
-    <p>Style: {{ beer.style }}</p>
-    <p>Description: {{ beer.description }}</p>
-    <router-link v-bind:to="`/recipes/${beer.recipes[0].id}`">
-      <p>Recipe Pairing: {{ beer.recipes[0].title }}</p>
-    </router-link>
+  <section id="Login" class="login">
+    <div class="container">
+      <div class="section-title">
+        <h1>{{ beer.name }}</h1>
+        <img :src="beer.image_url" :alt="beer.name" />
+        <p>Style: {{ beer.style }}</p>
+        <p>Description: {{ beer.description }}</p>
+        <router-link v-bind:to="`/recipes/${beer.recipes[0].id}`">
+          <p>Recipe Pairing: {{ beer.recipes[0].title }}</p>
+        </router-link>
 
-    <router-link to="/beers">Back to all beers</router-link>
-  </div>
+        <router-link to="/beers">Back to all beers</router-link>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

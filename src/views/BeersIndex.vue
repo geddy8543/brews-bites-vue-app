@@ -5,9 +5,7 @@
       <section id="why-us" class="why-us">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <br />
-            <br />
-            <p>The Beers</p>
+            <h1>The Beers</h1>
           </div>
 
           <div class="row">
@@ -50,16 +48,6 @@
       <p>Description: {{ beer.description }}</p>
       <a :href="'/beers/' + beer.id">More Info</a>
     </div> -->
-
-    Search by title:
-    <input type="text" v-model="titleFilter" list="titles" />
-    <datalist id="titles">
-      <option v-for="beer in beers" :key="beer.id">{{ beer.title }}</option>
-    </datalist>
-
-    <div>
-      <button v-on:click="setSortAttribute('title')">Sort by Title</button>
-    </div>
   </div>
 </template>
 

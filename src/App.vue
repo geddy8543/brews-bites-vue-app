@@ -26,9 +26,12 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
-            <li><a class="nav-link scrollto active" href="/">Home</a></li>
-            <li><a class="nav-link scrollto" href="/login">Login</a></li>
-            <li><a class="nav-link scrollto" href="/signup">Signup</a></li>
+            <li><a class="nav-link active" href="/">Home</a></li>
+            <li><a v-if="isLoggedIn" class="nav-link" href="/recipes">Recipes</a></li>
+            <li><a v-if="isLoggedIn" class="nav-link" href="/beers">Beers</a></li>
+            <li><a v-if="!isLoggedIn" class="nav-link" href="/login">Login</a></li>
+            <li><a v-if="!isLoggedIn" class="nav-link" href="/signup">Signup</a></li>
+            <li><a v-if="isLoggedIn" v-on:click="logout()" class="nav-link" href="#">Logout</a></li>
 
             <!-- <li class="dropdown">
               <a href="#">
@@ -183,5 +186,28 @@
     <!-- End Footer -->
   </div>
 </template>
-
-<style></style>
+<script>
+import axios from "axios";
+export default {
+  created: function () {
+    this.isLoggedIn;
+    this.logout;
+  },
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        this.$router.push("/login");
+        return false;
+      }
+    },
+    logout: function () {
+      console.log("bullshit");
+      delete axios.defaults.headers.common["Authorization"];
+      localStorage.removeItem("jwt");
+      this.$router.push("/");
+    },
+  },
+};
+</script>

@@ -7,7 +7,7 @@
           <div class="section-title">
             <br />
             <br />
-            <p>The Recipes</p>
+            <h1>The Recipes</h1>
           </div>
 
           <div class="row">
@@ -50,15 +50,6 @@
       <p>Description: {{ recipe.description }}</p>
       <a :href="'/recipes/' + recipe.id">More Info</a>
     </div> -->
-    --> Search by title:
-    <input type="text" v-model="titleFilter" list="titles" />
-    <datalist id="titles">
-      <option v-for="recipe in recipes" :key="recipe.id">{{ recipe.title }}</option>
-    </datalist>
-
-    <div>
-      <button v-on:click="setSortAttribute('title')">Sort by Title</button>
-    </div>
   </div>
 </template>
 
