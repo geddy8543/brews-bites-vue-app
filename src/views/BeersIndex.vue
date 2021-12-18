@@ -1,13 +1,55 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
+    <main id="main">
+      <!-- ======= Why Us Section ======= -->
+      <section id="why-us" class="why-us">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <br />
+            <br />
+            <p>The Beers</p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-4 mt-lg-0" v-for="beer in beers" :key="beer.id">
+              <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                <span>{{ beer.name }}</span>
+                <h4>{{ beer.description }}</h4>
+                <p><a :href="'/beers/' + beer.id">More Info</a></p>
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                <span>02</span>
+                <h4>Repellat Nihil</h4>
+                <p>
+                  Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para
+                  dest
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                <span>03</span>
+                <h4>Ad ad velit qui</h4>
+                <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- End Why Us Section -->
+    </main>
+    <!-- <h1>{{ message }}</h1>
     <h2>All beers:</h2>
     <div v-for="beer in beers" :key="beer.id">
       <h3>{{ beer.name }}</h3>
       <img :src="beer.image_url" :alt="beer.name" />
       <p>Description: {{ beer.description }}</p>
       <a :href="'/beers/' + beer.id">More Info</a>
-    </div>
+    </div> -->
 
     Search by title:
     <input type="text" v-model="titleFilter" list="titles" />
