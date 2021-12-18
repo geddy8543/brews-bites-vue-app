@@ -2,3 +2,8 @@ From app.vue
 <header>
 <i class="bi bi-list mobile-nav-toggle"></i>
 <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+
+copy pasted from app.vue lines 28-30
+<li><router-link to="/" class="nav-link scrollto active">Home</router-link></li>
+            <li><router-link to="/Signup" class="nav-link">Signup</router-link></li>
+            <li><router-link to="/Login" class="nav-link">Login</router-link></li>

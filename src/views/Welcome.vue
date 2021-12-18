@@ -1,5 +1,10 @@
 <template>
   <div class="home">
+    <br />
+    <br />
+    <br />
+    <br />
+
     <h1>{{ message }}</h1>
 
     <router-link to="/recipes">RecipesIndex</router-link>
