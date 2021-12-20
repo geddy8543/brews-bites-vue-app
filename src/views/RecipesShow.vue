@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-title">
         <h1>{{ recipe.title }}</h1>
-        <img :src="recipe.image_url" :alt="recipe.title" />
+        <img v-bind:src="recipe.image_url" :alt="recipe.title" />
         <p>Description: {{ recipe.description }}</p>
         <p>Ingredients: {{ recipe.ingredients }}</p>
         <p>Instructions: {{ recipe.instructions }}</p>

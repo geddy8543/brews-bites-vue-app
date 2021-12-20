@@ -16,10 +16,17 @@
           </div>
         </div>
       </div>
+      <div id="map"></div>
     </div>
   </section>
   <!-- End Hero -->
 </template>
+
+<style>
+img {
+  width: 250px;
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -29,6 +36,9 @@ export default {
     return {
       message: "Brews + Bites",
     };
+  },
+  mounted: function () {
+    this.setUpMap();
   },
   methods: {
     submit: function () {
@@ -51,9 +61,3 @@ export default {
   },
 };
 </script>
-
-<style>
-img {
-  width: 250px;
-}
-</style>
