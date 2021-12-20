@@ -18,6 +18,9 @@
                 <p><a :href="'/recipes/' + recipe.id">More Info</a></p>
               </div>
             </div>
+            <div class="btns">
+              <a href="recipesNew" class="btn-menu animated fadeInUp scrollto">Create a Recipe</a>
+            </div>
 
             <!-- <div class="col-lg-4 mt-4 mt-lg-0">
               <div class="box" data-aos="zoom-in" data-aos-delay="200">
