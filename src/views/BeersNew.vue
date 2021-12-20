@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-title">
         <img v-if="status" :src="`https://http.cat/${status}`" alt="" />
-        <form v-on:submit.prevent="createRecipe()">
+        <form v-on:submit.prevent="createBeer()">
           <h1>New Beer!</h1>
           <ul>
             <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -44,18 +44,18 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newRecipeParams: {},
+      newBeerParams: {},
       errors: [],
       status: "",
     };
   },
   methods: {
-    createRecipe: function () {
-      console.log("Makin a new recipe!");
+    createBeer: function () {
+      console.log("Making a new Beer!");
       axios
-        .post("/recipes", this.newRecipeParams)
+        .post("/beers", this.newBeerParams)
         .then(() => {
-          this.$router.push("/recipes");
+          this.$router.push("/beers");
         })
         .catch((error) => {
           this.status = error.response.status;
