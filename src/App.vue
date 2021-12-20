@@ -27,38 +27,17 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
             <li><a class="nav-link active" href="/">Home</a></li>
-            <li><a v-if="isLoggedIn" class="nav-link" href="/recipes">Recipes</a></li>
-            <li><a v-if="isLoggedIn" class="nav-link" href="/beers">Beers</a></li>
-            <li><a v-if="!isLoggedIn" class="nav-link" href="/login">Login</a></li>
-            <li><a v-if="!isLoggedIn" class="nav-link" href="/signup">Signup</a></li>
-            <li><a v-if="isLoggedIn" v-on:click="logout()" class="nav-link" href="#">Logout</a></li>
-
-            <!-- <li class="dropdown">
-              <a href="#">
-                <span>Drop Down</span>
-                <i class="bi bi-chevron-down"></i>
-              </a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown">
-                  <a href="#">
-                    <span>Deep Drop Down</span>
-                    <i class="bi bi-chevron-right"></i>
-                  </a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+            <div v-if="isNavbarLoggedIn()">
+              <li><a class="nav-link" href="/recipes">Recipes</a></li>
+              <li><a class="nav-link" href="/beers">Beers</a></li>
+              <li>
+                <a v-on:click="logout()" class="nav-link" href="#">Logout</a>
+              </li>
+            </div>
+            <div v-if="!isNavbarLoggedIn()">
+              <li><a class="nav-link" href="/login">Login</a></li>
+              <li><a class="nav-link" href="/signup">Signup</a></li>
+            </div>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -199,6 +178,13 @@ export default {
         return true;
       } else {
         this.$router.push("/login");
+        return false;
+      }
+    },
+    isNavbarLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
         return false;
       }
     },

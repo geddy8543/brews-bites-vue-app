@@ -18,8 +18,8 @@
                 <p><a :href="'/recipes/' + recipe.id">More Info</a></p>
               </div>
             </div>
-            <div class="btns">
-              <a href="recipesNew" class="btn-menu animated fadeInUp scrollto">Create a Recipe</a>
+            <div class="btns mt-4">
+              <a href="/recipes/new" class="btn-menu animated fadeInUp scrollto">Create a Recipe</a>
             </div>
 
             <!-- <div class="col-lg-4 mt-4 mt-lg-0">
