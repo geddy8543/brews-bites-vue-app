@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="btns mt-4">
-              <a href="/beer/new" class="btn-menu animated fadeInUp scrollto">Add a Beer</a>
+              <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Add a Beer</a>
             </div>
 
             <!-- <div class="col-lg-4 mt-4 mt-lg-0">

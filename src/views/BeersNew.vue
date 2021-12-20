@@ -8,31 +8,38 @@
           <ul>
             <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
           </ul>
-          <div>
-            <label>Name:</label>
-            <input type="text" v-model="newBeerParams.name" />
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              v-model="newBeerParams.name"
+              class="form-control"
+              name="name"
+              id="name"
+              placeholder="Name"
+            />
           </div>
-          <div>
-            <label>Style:</label>
-            <input type="text" v-model="newBeerParams.style" />
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              v-model="newBeerParams.style"
+              class="form-control"
+              name="style"
+              id="style"
+              placeholder="Style"
+            />
           </div>
-          <div>
-            <label>Prep Time:</label>
-            <input type="text" v-model="newRecipeParams.prep_time" />
+
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              v-model="newBeerParams.image_url"
+              class="form-control"
+              name="image_url"
+              id="image_url"
+              placeholder="Photo"
+            />
           </div>
-          <div>
-            <label>Ingredients:</label>
-            <input type="text" v-model="newRecipeParams.ingredients" />
-          </div>
-          <div>
-            <label>Directions:</label>
-            <input type="text" v-model="newRecipeParams.directions" />
-          </div>
-          <div>
-            <label>Image Url:</label>
-            <input type="text" v-model="newRecipeParams.image_url" />
-          </div>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" class="mt-3 opaque-button" />
         </form>
       </div>
     </div>
