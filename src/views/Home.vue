@@ -8,7 +8,7 @@
             Welcome to
             <span>Brews + Bites</span>
           </h1>
-          <h2>something pithy</h2>
+          <h2>Everything's Better With Beer</h2>
 
           <div class="btns">
             <a href="/login" class="btn-menu animated fadeInUp scrollto">Login</a>
