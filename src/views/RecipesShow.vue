@@ -7,9 +7,9 @@
         <p>Description: {{ recipe.description }}</p>
         <p>Ingredients: {{ recipe.ingredients }}</p>
         <p>Instructions: {{ recipe.instructions }}</p>
-        <router-link v-bind:to="`/beers/${recipe.beers[0].id}`">
-          <p>Beer Pairing: {{ recipe.beers[0].name }}</p>
-        </router-link>
+        <!-- <router-link v-bind:to="`/beers/${recipe.beers[0].id}`"> -->
+        <!-- <p>Beer Pairing: {{ recipe.beers[0].name }}</p> -->
+        <!-- </router-link> -->
 
         <router-link to="/recipes">Back to all recipes</router-link>
       </div>
