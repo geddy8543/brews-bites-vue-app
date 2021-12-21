@@ -1,6 +1,6 @@
 <template>
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section id="hero" class="d-flex align-items-center hero-image">
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
@@ -10,9 +10,12 @@
           </h1>
           <h2>Everything's Better With Beer</h2>
 
-          <div class="btns">
-            <a href="/login" class="btn-menu animated fadeInUp scrollto">Login</a>
-            <a href="/signup" class="btn-book animated fadeInUp scrollto">Signup</a>
+          <div class="btns" v-if="!$parent.isLoggedIn()">
+            <a href="/login" class="btn-menu animated fadeInUp">Login</a>
+            <a href="/signup" class="btn-book animated fadeInUp">Signup</a>
+          </div>
+          <div class="btns" v-if="$parent.isLoggedIn()">
+            <a href="/welcome" class="btn-menu animated fadeInUp">Come on in!</a>
           </div>
         </div>
       </div>

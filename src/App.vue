@@ -27,17 +27,15 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
             <li><a class="nav-link active" href="/">Home</a></li>
-            <div v-if="isNavbarLoggedIn()">
-              <li><a class="nav-link" href="/recipes">Recipes</a></li>
-              <li><a class="nav-link" href="/beers">Beers</a></li>
-              <li>
-                <a v-on:click="logout()" class="nav-link" href="#">Logout</a>
-              </li>
-            </div>
-            <div v-if="!isNavbarLoggedIn()">
-              <li><a class="nav-link" href="/login">Login</a></li>
-              <li><a class="nav-link" href="/signup">Signup</a></li>
-            </div>
+
+            <li v-if="isNavbarLoggedIn()"><a class="nav-link" href="/recipes">Recipes</a></li>
+            <li v-if="isNavbarLoggedIn()"><a class="nav-link" href="/beers">Beers</a></li>
+            <li v-if="isNavbarLoggedIn()">
+              <a v-on:click="logout()" class="nav-link" href="#">Logout</a>
+            </li>
+
+            <li v-if="!isNavbarLoggedIn()"><a class="nav-link" href="/login">Login</a></li>
+            <li v-if="!isNavbarLoggedIn()"><a class="nav-link" href="/signup">Signup</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

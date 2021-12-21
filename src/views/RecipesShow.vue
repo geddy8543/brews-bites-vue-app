@@ -3,15 +3,28 @@
     <div class="container">
       <div class="section-title">
         <h1>{{ recipe.title }}</h1>
-        <img v-bind:src="recipe.image_url" :alt="recipe.title" />
-        <p>Description: {{ recipe.description }}</p>
-        <p>Ingredients: {{ recipe.ingredients }}</p>
-        <p>Instructions: {{ recipe.instructions }}</p>
-        <router-link v-bind:to="`/beers/${recipe.beers[0].id}`">
-          <p>Beer Pairing: {{ recipe.beers[0].name }}</p>
-        </router-link>
+        <div class="d-flex">
+          <img class="show-image" v-bind:src="recipe.image_url" :alt="recipe.title" />
+          <div class="d-flex flex-wrap flex-row flex-sm-column justify-content-between show-content">
+            <p>
+              <span class="gold">Description:</span>
+              {{ recipe.description }}
+            </p>
+            <p>
+              <span class="gold">Ingredients:</span>
+              {{ recipe.ingredients }}
+            </p>
+            <p>
+              <span class="gold">Instructions:</span>
+              {{ recipe.instructions }}
+            </p>
+            <router-link v-bind:to="`/beers/${recipe.beers[0].id}`">
+              <p>Beer Pairing: {{ recipe.beers[0].name }}</p>
+            </router-link>
 
-        <router-link to="/recipes">Back to all recipes</router-link>
+            <router-link to="/recipes">Back to all recipes</router-link>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -24,7 +37,7 @@ export default {
     return {
       recipe: {},
       title: [],
-      beers: [],
+      beers: [{ name: "", id: null }],
     };
   },
   created: function () {
