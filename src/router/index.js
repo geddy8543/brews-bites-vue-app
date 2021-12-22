@@ -10,8 +10,8 @@ import RecipesShow from "../views/RecipesShow.vue";
 import RecipesNew from "../views/RecipesNew.vue";
 import RecipesEdit from "../views/RecipesEdit.vue";
 import BeersIndex from "../views/BeersIndex.vue";
-import BeersNew from "../views/BeersNew.vue";
 import BeersShow from "../views/BeersShow.vue";
+import BeersNew from "../views/BeersNew.vue";
 
 Vue.use(VueRouter);
 

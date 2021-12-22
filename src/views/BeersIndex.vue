@@ -11,7 +11,9 @@
           <div class="row">
             <div class="col-lg-4 mt-4 mt-lg-0" v-for="beer in beers" :key="beer.id">
               <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                <!-- <router-link v-bind:to="`/beers/${beer.id}`"> -->
                 <span>{{ beer.name }}</span>
+                <!-- </router-link> -->
                 <h4>{{ beer.description }}</h4>
                 <p><a :href="'/beers/' + beer.id">More Info</a></p>
               </div>

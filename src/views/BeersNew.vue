@@ -28,6 +28,16 @@
               placeholder="Style"
             />
           </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              v-model="newBeerParams.description"
+              class="form-control"
+              name="description"
+              id="description"
+              placeholder="Description"
+            />
+          </div>
 
           <div class="col-lg-4 col-md-6 form-group mt-3">
             <input
@@ -58,10 +68,10 @@ export default {
   },
   methods: {
     createBeer: function () {
-      console.log("Making a new Beer!");
       axios
         .post("/beers", this.newBeerParams)
-        .then(() => {
+        .then((response) => {
+          console.log("Making a new Beer!", response);
           this.$router.push("/beers");
         })
         .catch((error) => {
