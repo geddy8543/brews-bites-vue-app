@@ -18,6 +18,10 @@
               <p>Recipe Pairing: {{ beer.recipes[0].title }}</p>
             </router-link>
             <div class="btns mt-4">
+              <a href="/recipes/new" class="btn-menu animated fadeInUp scrollto">Recommend a Recipe for this Beer</a>
+            </div>
+
+            <div class="btns mt-4">
               <a href="/beers" class="btn-menu animated fadeInUp scrollto">Back to all beers</a>
             </div>
           </div>

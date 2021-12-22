@@ -22,7 +22,7 @@
               <p>Beer Pairing: {{ recipe.beers[0].name }}</p>
             </router-link>
             <div class="btns mt-4">
-              <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Recommend a Beer</a>
+              <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Recommend a Beer for this Recipe</a>
             </div>
             <div class="btns mt-4">
               <a href="/recipes" class="btn-menu animated fadeInUp scrollto">Back to all recipes</a>
