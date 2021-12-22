@@ -17,8 +17,9 @@
             <router-link v-bind:to="`/recipes/${beer.recipes[0].id}`">
               <p>Recipe Pairing: {{ beer.recipes[0].title }}</p>
             </router-link>
-
-            <router-link to="/beers">Back to all beers</router-link>
+            <div class="btns mt-4">
+              <a href="/beers" class="btn-menu animated fadeInUp scrollto">Back to all beers</a>
+            </div>
           </div>
         </div>
       </div>

@@ -21,8 +21,12 @@
             <router-link v-bind:to="`/beers/${recipe.beers[0].id}`">
               <p>Beer Pairing: {{ recipe.beers[0].name }}</p>
             </router-link>
-
-            <router-link to="/recipes">Back to all recipes</router-link>
+            <div class="btns mt-4">
+              <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Recommend a Beer</a>
+            </div>
+            <div class="btns mt-4">
+              <a href="/recipes" class="btn-menu animated fadeInUp scrollto">Back to all recipes</a>
+            </div>
           </div>
         </div>
       </div>
