@@ -10,11 +10,11 @@
           </h1>
           <h2>Everything's Better With Beer</h2>
 
-          <div class="btns" v-if="!$parent.isLoggedIn()">
+          <div class="btns" v-if="!$parent.isNavbarLoggedIn()">
             <a href="/login" class="btn-menu animated fadeInUp">Login</a>
             <a href="/signup" class="btn-book animated fadeInUp">Signup</a>
           </div>
-          <div class="btns" v-if="$parent.isLoggedIn()">
+          <div class="btns" v-if="$parent.isNavbarLoggedIn()">
             <a href="/welcome" class="btn-menu animated fadeInUp">Come on in!</a>
           </div>
         </div>

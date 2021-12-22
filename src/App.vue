@@ -167,18 +167,10 @@
 import axios from "axios";
 export default {
   created: function () {
-    this.isLoggedIn;
+    this.isNavbarLoggedIn;
     this.logout;
   },
   methods: {
-    isLoggedIn: function () {
-      if (localStorage.getItem("jwt")) {
-        return true;
-      } else {
-        this.$router.push("/login");
-        return false;
-      }
-    },
     isNavbarLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
         return true;

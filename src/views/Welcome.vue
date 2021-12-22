@@ -3,7 +3,9 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
-          <h1>Welcome to the Brews + Bites App!</h1>
+          <h1>
+            <span class="gold">Welcome to the Brews + Bites App!</span>
+          </h1>
           <h2>{{ message }}</h2>
           <div class="btns mt-6">
             <router-link to="/recipes" class="btn-menu animated fadeInUp">Recipes Index</router-link>
